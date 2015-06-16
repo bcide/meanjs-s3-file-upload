@@ -1,12 +1,12 @@
 {
-	"name": "meanjs",
-	"description": "Full-Stack JavaScript with MongoDB, Express, AngularJS, and Node.js.",
-	"version": "0.3.3",
+	"name": "meanjs-s3-file-upload",
+	"description": "file upload to s3 in mean.js",
+	"version": "0.0.1",
 	"private": false,
-	"author": "https://github.com/meanjs/mean/graphs/contributors",
+	"author": "https://github.com/shamahoque",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/meanjs/mean.git"
+		"url": "https://github.com/shamahoque/meanjs-s3-file-upload.git"
 	},
 	"engines": {
 		"node": ">=0.10.28",

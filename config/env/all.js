@@ -2,9 +2,9 @@
 
 module.exports = {
 	app: {
-		title: 'MEAN.JS',
-		description: 'Full-Stack JavaScript with MongoDB, Express, AngularJS, and Node.js',
-		keywords: 'mongodb, express, angularjs, node.js, mongoose, passport'
+		title: 'Mean.js S3-file-upload',
+		description: 'file upload to s3 in mean.js',
+		keywords: 'mongodb, express, angularjs, node.js, mongoose, s3, aws, upload'
 	},
 	port: process.env.PORT || 3000,
 	templateEngine: 'swig',
