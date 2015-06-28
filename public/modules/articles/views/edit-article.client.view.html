@@ -26,7 +26,7 @@
 				<img ng-src="{{article.photo_url}}"> <br><br><br>
 				<div class="form-group">
 			        <label for="photos">Input New Picture</label>
-			        <input id="photos" type="file" class="btn" ng-file-select="FileSelect($files)">
+			        <input id="photos" type="file" class="btn" ng-file-select="files = $files">
 			    
 			        <div ng-show="uploading" ng-repeat="file in files" class="container">
 			            <div class="progress">
