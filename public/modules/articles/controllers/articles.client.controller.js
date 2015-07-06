@@ -43,6 +43,7 @@ angular.module('articles').controller('ArticlesController', ['$scope', '$statePa
 		};
 
 		// Update existing Article
+		//to-do:refactor
 		$scope.update = function() {
 			$scope.submitted = true;
 			if($scope.articleForm.$valid){
