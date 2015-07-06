@@ -13,9 +13,6 @@ angular.module(ApplicationConfiguration.applicationModuleName).config(['$locatio
 		$rootScope.config = config;
 		console.log(config);
 	});
-	$http.get('/aws/s3Policy').success(function(s3Policy){
-		console.log(s3Policy);
-	});
 });
 
 //Then define the init function for starting up the application

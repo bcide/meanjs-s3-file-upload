@@ -2,13 +2,13 @@
 	<div class="page-header">
 		<h1 data-ng-bind="article.title"></h1>
 	</div>
-	<div class="pull-right" data-ng-show="authentication.user._id == article.user._id">
+	<div class="pull-right">
 		<a class="btn btn-primary" href="/#!/articles/{{article._id}}/edit">
 			<i class="glyphicon glyphicon-edit"></i>
 		</a>
-		<a class="btn btn-primary" data-ng-click="remove();">
+		<!-- <a class="btn btn-primary" data-ng-click="remove();">
 			<i class="glyphicon glyphicon-trash"></i>
-		</a>
+		</a> -->
 	</div>
 	<small>
 		<em class="text-muted">
@@ -19,6 +19,6 @@
 		</em>
 	</small>
 	<br>
-	<img ng-src="{{article.photo_url}}" style="max-width:50%">
+	<img ng-src="{{article.photo_url}}" err-src style="max-width:50%">
 	<p class="lead" data-ng-bind="article.content"></p>
 </section>

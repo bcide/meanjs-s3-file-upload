@@ -20,11 +20,6 @@ var ArticleSchema = new Schema({
 		trim: true,
 		required: 'Title cannot be blank'
 	},
-	content: {
-		type: String,
-		default: '',
-		trim: true
-	},
 	photo_url: {
 		type: String,
 		default: '',

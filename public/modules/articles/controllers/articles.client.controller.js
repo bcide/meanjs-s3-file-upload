@@ -11,7 +11,6 @@ angular.module('articles').controller('ArticlesController', ['$scope', '$statePa
 			$scope.submitted = true;
 			var article = new Articles({
 				title: this.title,
-				content: this.content,
 				photo_url: ""
 			});
 
@@ -21,7 +20,6 @@ angular.module('articles').controller('ArticlesController', ['$scope', '$statePa
 
 				// Clear form fields
 				$scope.title = '';
-				$scope.content = '';
 			}, function(errorResponse) {
 				$scope.error = errorResponse.data.message;
 			});
@@ -49,7 +47,7 @@ angular.module('articles').controller('ArticlesController', ['$scope', '$statePa
 			$scope.submitted = true;
 			if($scope.articleForm.$valid){
 				if($scope.files){
-					$scope.onFileSelect($scope.files, "aboutPageAbout", $scope.updatePhoto);
+					$scope.onFileSelect($scope.files, 'article', $scope.updatePhoto);
 					$scope.uploading = true;
 				}else{
 					var article = $scope.article;
