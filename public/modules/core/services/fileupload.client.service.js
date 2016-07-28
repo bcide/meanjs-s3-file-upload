@@ -4,12 +4,12 @@
 angular.module('core').service('FileUpload', ['$rootScope', '$http', '$upload',
 
     function($rootScope, $http, $upload) {
-        
+
         // Upload files to S3
         this.upload = function(file, i, folder, uploads, callback) {
             $http.get('/aws/s3Policy?mimeType='+ file.type + '&folder=' + folder).success(function(response) {
                         var s3Params = response;
-                        var photo_url= 'https://' + $rootScope.config.awsConfig.bucket + '.s3.amazonaws.com/'+folder+'/'+i;
+                        var photo_url= 'https://' + $rootScope.config.awsConfig.bucket + '.s3.amazonaws.com/'+folder+'/'+file.name;
                         uploads[i] = $upload.upload({
                             url: 'https://' + $rootScope.config.awsConfig.bucket + '.s3.amazonaws.com/',
                             method: 'POST',
@@ -20,7 +20,7 @@ angular.module('core').service('FileUpload', ['$rootScope', '$http', '$upload',
                                 return data;
                             },
                             data: {
-                                'key' : folder + '/' +i,
+                                'key' : folder + '/' +file.name,
                                 'acl' : 'public-read',
                                 'Content-Type' : file.type,
                                 'AWSAccessKeyId': s3Params.AWSAccessKeyId,
@@ -38,7 +38,7 @@ angular.module('core').service('FileUpload', ['$rootScope', '$http', '$upload',
                             if (response.status === 201) {
                                 console.log(response);
                                 msg = photo_url;
-                                
+
 
                             } else {
                                 msg = "error";
@@ -51,14 +51,14 @@ angular.module('core').service('FileUpload', ['$rootScope', '$http', '$upload',
                             console.log(msgs);
 
                         }, null, function(evt) {
-                            
+
                             console.log(evt);
                             file.progress =  parseInt(100.0 * evt.loaded / evt.total);
                         });
             });
         };
 
-        
+
 
 
     }
